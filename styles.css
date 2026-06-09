@@ -242,3 +242,18 @@ footer {
 .contact-email a:hover {
     color: var(--orange);
 }
+
+.container h1,
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.container p,
+.container li {
+    margin-bottom: 12px;
+}
+
+.container ul {
+    margin-left: 24px;
+    margin-bottom: 20px;
+}
