@@ -123,6 +123,10 @@ footer {
     text-decoration: none;
 }
 
+.footer-links a:hover {
+    color: var(--orange);
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.3rem;
