@@ -179,7 +179,12 @@ footer {
     margin: 0;
 }
 
-.hero-title h2 {
+.brand-name {
     margin: 0;
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+.brand-name span {
     color: var(--orange);
 }
