@@ -135,7 +135,7 @@ footer {
 }
 
 .story-image img {
-    width: 200px;
+    width: 500px;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
@@ -165,7 +165,7 @@ footer {
 }
 
 .logo-inline {
-    width: 20px;
+    width: 120px;
     height: auto;
 }
 
