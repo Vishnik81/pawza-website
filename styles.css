@@ -193,3 +193,31 @@ footer {
     color: var(--orange);
 }
 
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.screenshot-card {
+    text-align: center;
+}
+
+.screenshot-card img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 32px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.screenshot-card h3 {
+    margin-top: 18px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+}
