@@ -154,3 +154,20 @@ footer {
         width: 100px;
     }
 }
+
+.hero-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.logo-inline {
+    width: 80px;
+    height: auto;
+}
+
+.hero-title h1 {
+    margin: 0;
+}
