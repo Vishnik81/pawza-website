@@ -141,7 +141,7 @@ footer {
 }
 
 .story-image img {
-    width: 500px;
+    width: 400px;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
@@ -149,6 +149,10 @@ footer {
 
 .story-text p {
     margin-bottom: 20px;
+}
+
+.story-text span {
+    color: var(--orange);
 }
 
 @media (max-width: 768px) {
@@ -188,3 +192,4 @@ footer {
 .brand-name span {
     color: var(--orange);
 }
+
