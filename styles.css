@@ -258,3 +258,71 @@ footer {
     margin-left: 24px;
     margin-bottom: 20px;
 }
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 48px 20px 64px;
+    }
+
+    .hero-title {
+        flex-direction: row;
+        gap: 18px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .brand-name {
+        font-size: 3rem;
+        white-space: nowrap;
+    }
+
+    .logo-inline {
+        width: 90px;
+    }
+
+    .hero > .container > h1 {
+        font-size: 3.2rem;
+        line-height: 1.05;
+        margin-top: 48px;
+    }
+
+    .subtitle {
+        font-size: 1.35rem;
+        line-height: 1.4;
+        margin-top: 24px;
+    }
+
+    .section {
+        padding: 56px 24px;
+    }
+
+    .story-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .story-text h2,
+    .section h2 {
+        font-size: 2.4rem;
+        line-height: 1.1;
+    }
+
+    .story-text p {
+        font-size: 1.25rem;
+        line-height: 1.55;
+    }
+
+    .story-image img {
+        max-width: 100%;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .screenshot-card img {
+        max-width: 280px;
+    }
+}
