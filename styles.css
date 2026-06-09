@@ -35,9 +35,7 @@ body {
 }
 
 .hero h2 {
-    font-size: 3.5rem;
-    color: var(--orange);
-    margin-bottom: 20px;
+    font-size: 3rem;
 }
 
 .subtitle {
