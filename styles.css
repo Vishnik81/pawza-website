@@ -134,7 +134,7 @@ footer {
 .story-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 20px;
     align-items: center;
 }
 
