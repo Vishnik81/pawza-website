@@ -123,6 +123,7 @@ footer {
 
 .logo {
     width: 140px;
+    height: 140px;
     margin-bottom: 30px;
 }
 
@@ -134,7 +135,7 @@ footer {
 }
 
 .story-image img {
-    width: 100%;
+    width: 20%;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
