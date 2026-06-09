@@ -81,6 +81,10 @@ body {
     background: rgba(255,255,255,0.05);
 }
 
+.alt span {
+    color: var(--orange);
+}
+
 .section h2 {
     margin-bottom: 24px;
     font-size: 2rem;
@@ -224,4 +228,13 @@ footer {
     .screenshots {
         grid-template-columns: 1fr;
     }
+}
+
+.contact-email a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-email a:hover {
+    color: var(--orange);
 }
