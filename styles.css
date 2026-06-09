@@ -120,3 +120,36 @@ footer {
         font-size: 1.1rem;
     }
 }
+
+.logo {
+    width: 140px;
+    margin-bottom: 30px;
+}
+
+.story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.story-text p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .story-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        width: 100px;
+    }
+}
