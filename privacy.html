@@ -10,6 +10,23 @@
 
       gtag('config', 'G-XMD0W73ZPT');
     </script>
+    <script>
+      // Track device demand for future Android decision
+      document.addEventListener("DOMContentLoaded", function () {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/android/i.test(userAgent)) {
+          gtag('event', 'android_visitor', {
+            device_type: 'android'
+          });
+        }
+        else if (/iPad|iPhone|iPod/.test(userAgent)) {
+          gtag('event', 'ios_visitor', {
+            device_type: 'ios'
+          });
+        }
+      });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - PawZa</title>
