@@ -12,23 +12,21 @@
       gtag('config', 'G-XMD0W73ZPT');
     </script>
     <script>
-        // PawZa analytics: measure platform interest
+        // PawZa analytics: measure visitor platform demand
         document.addEventListener("DOMContentLoaded", function () {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
+            let platform = "desktop";
+
             if (/android/i.test(userAgent)) {
-                gtag('event', 'android_visitor', {
-                    device_type: 'android'
-                });
+                platform = "android";
             } else if (/iPad|iPhone|iPod/.test(userAgent)) {
-                gtag('event', 'ios_visitor', {
-                    device_type: 'ios'
-                });
-            } else {
-                gtag('event', 'desktop_visitor', {
-                    device_type: 'desktop'
-                });
+                platform = "ios";
             }
+
+            gtag("event", "platform_visitor", {
+                platform: platform
+            });
         });
     </script>
     <meta charset="UTF-8">
