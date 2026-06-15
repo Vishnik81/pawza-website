@@ -34,6 +34,57 @@
     <title>PawZa - Find friends for your dog</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+document.getElementById("androidWaitlistForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const message = document.getElementById("waitlistMessage");
+    const name = document.getElementById("waitlistName").value.trim();
+    const email = document.getElementById("waitlistEmail").value.trim();
+
+    message.textContent = "Submitting...";
+
+    const params = new URLSearchParams(window.location.search);
+
+    try {
+        const response = await fetch("https://europe-west1-freddie-57977.cloudfunctions.net/submitAndroidWaitlist", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name || null,
+                email: email,
+                source: params.get("utm_source"),
+                medium: params.get("utm_medium"),
+                campaign: params.get("utm_campaign"),
+                page: window.location.href
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            message.textContent = result.message || "Thanks — we’ll let you know when PawZa for Android is ready.";
+            document.getElementById("androidWaitlistForm").reset();
+
+            if (typeof gtag === "function") {
+                gtag("event", "android_waitlist_signup", {
+                    source: params.get("utm_source"),
+                    medium: params.get("utm_medium"),
+                    campaign: params.get("utm_campaign")
+                });
+            }
+        } else {
+            message.textContent = result.message || "Something went wrong. Please try again.";
+        }
+    } catch (error) {
+        message.textContent = "Something went wrong. Please try again.";
+    }
+});
+</script>
+
 <body>
 
 <header class="hero">
@@ -118,6 +169,26 @@
     </div>
 </section>
 
+<section class="section" id="android-waitlist">
+    <div class="container" style="text-align: center;">
+        <h2>Android user?</h2>
+        <p>
+            PawZa for Android is not available yet. Join the waitlist and we’ll let you know when it launches.
+        </p>
+
+        <form id="androidWaitlistForm" class="waitlist-form">
+            <input type="text" id="waitlistName" name="name" placeholder="Your name (optional)">
+            <input type="email" id="waitlistEmail" name="email" placeholder="Your email" required>
+            <button type="submit">Notify me</button>
+        </form>
+
+        <p class="small-text">
+            We’ll email you about PawZa for Android. You can unsubscribe at any time.
+        </p>
+
+        <p id="waitlistMessage" class="waitlist-message"></p>
+    </div>
+</section>
 
 <footer>
     <div class="container footer-links">

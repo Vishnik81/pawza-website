@@ -232,6 +232,42 @@ footer {
     margin-bottom: 20px;
 }
 
+.waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+    margin: 24px auto 12px;
+}
+
+.waitlist-form input {
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.waitlist-form button {
+    padding: 14px 18px;
+    border: none;
+    border-radius: 12px;
+    background: #f97316;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.small-text {
+    font-size: 13px;
+    opacity: 0.75;
+}
+
+.waitlist-message {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 24px;
