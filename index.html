@@ -48,7 +48,7 @@ document.getElementById("androidWaitlistForm").addEventListener("submit", async 
     const params = new URLSearchParams(window.location.search);
 
     try {
-        const response = await fetch("https://europe-west1-freddie-57977.cloudfunctions.net/submitAndroidWaitlist", {
+        const response = await fetch("https://submitandroidwaitlist-clzc7apjoq-ew.a.run.app", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
