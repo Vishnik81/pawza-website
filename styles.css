@@ -286,6 +286,23 @@ footer {
   display: block;
 }
 
+.app-store-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    background: #021A44;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.secondary-note {
+    margin-top: 18px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 24px;
