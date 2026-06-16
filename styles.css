@@ -268,6 +268,24 @@ footer {
     font-weight: 600;
 }
 
+.ios-only,
+.android-only,
+.desktop-only {
+  display: none;
+}
+
+.platform-ios .ios-only {
+  display: block;
+}
+
+.platform-android .android-only {
+  display: block;
+}
+
+.platform-desktop .desktop-only {
+  display: block;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 24px;

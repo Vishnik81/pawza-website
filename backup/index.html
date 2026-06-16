@@ -8,76 +8,31 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-XMD0W73ZPT');
     </script>
-
     <script>
+        // PawZa analytics: measure visitor platform demand
         document.addEventListener("DOMContentLoaded", function () {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             let platform = "desktop";
 
-            const isIOS =
-                /iPad|iPhone|iPod/.test(userAgent) ||
-                (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-            const isAndroid = /android/i.test(userAgent);
-
-            if (isAndroid) {
+            if (/android/i.test(userAgent)) {
                 platform = "android";
-            } else if (isIOS) {
+            } else if (/iPad|iPhone|iPod/.test(userAgent)) {
                 platform = "ios";
             }
 
-            document.body.classList.add("platform-" + platform);
-
-            if (typeof gtag === "function") {
-                gtag("event", "platform_visitor", {
-                    platform: platform
-                });
-            }
+            gtag("event", "platform_visitor", {
+                platform: platform
+            });
         });
     </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawZa - Find friends for your dog</title>
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        .platform-section {
-            display: none;
-        }
-
-        .platform-ios .ios-only {
-            display: block;
-        }
-
-        .platform-android .android-only {
-            display: block;
-        }
-
-        .platform-desktop .desktop-only {
-            display: block;
-        }
-
-        .app-store-button {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 14px 24px;
-            border-radius: 12px;
-            background: #021A44;
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .secondary-note {
-            margin-top: 18px;
-            font-size: 0.95rem;
-            opacity: 0.8;
-        }
-    </style>
 </head>
 
 <body>
@@ -85,22 +40,27 @@
 <header class="hero">
     <div class="container">
         <div class="hero-title">
-            <h1 class="brand-name">Paw<span>Za</span></h1>
+            <h1 class="brand-name">
+                    Paw<span>Za</span>
+                </h1>
 
             <img src="assets/PZ logo trans.png"
                  alt="PawZa Logo"
                  class="logo-inline">
+            
         </div>
-
         <h2>Find friends for your dog</h2>
         <p class="subtitle">
             Discover and organise local dog walks with other dog owners nearby.
         </p>
+
     </div>
 </header>
 
 <section id="story" class="section">
     <div class="container story-layout">
+
+
         <div class="story-text">
             <h2>Why Paw<span>Za</span> Exists</h2>
 
@@ -117,17 +77,19 @@
                 PawZa was created to make local dog walks easier to find, join and organise.
             </p>
         </div>
-
+        
         <div class="story-image">
             <img src="assets/Freddie.jpeg" alt="Freddie the Greyhound">
         </div>
-    </div>
-</section>
+        
 
+    </div>
+
+</section>
 <section class="section alt">
     <div class="container">
         <h2>See Paw<span>Za</span> in Action</h2>
-
+        
         <div class="screenshots">
             <div class="screenshot-card">
                 <img src="assets/screenshot-map.PNG" alt="PawZa map showing nearby dog walks">
@@ -144,33 +106,13 @@
                 <h3>Coordinate with other owners</h3>
             </div>
         </div>
-
         <div class="container" style="text-align: center;">
 
-            <div class="platform-section ios-only">
-                <h2>Download PawZa on the App Store</h2>
-                <p>PawZa is available for iPhone.</p>
-                <a class="app-store-button" href="APP_STORE_URL_HERE">
-                    Download on the App Store
-                </a>
-            </div>
+                <h2>Coming Soon to the App Store</h2>
 
-            <div class="platform-section android-only">
-                <h2>PawZa for Android is coming soon</h2>
                 <p>
-                    Join the Android waitlist below and we’ll let you know when it launches.
+                    PawZa is currently in testing and will be available soon.
                 </p>
-            </div>
-
-            <div class="platform-section desktop-only">
-                <h2>Get PawZa</h2>
-                <p>
-                    PawZa is coming to iPhone first. Android users can join the waitlist below.
-                </p>
-                <a class="app-store-button" href="APP_STORE_URL_HERE">
-                    Download on the App Store
-                </a>
-            </div>
 
         </div>
     </div>
@@ -203,6 +145,7 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
     </div>
+
 
     <p>© 2026 PawZa</p>
 </footer>
@@ -257,5 +200,9 @@ document.getElementById("androidWaitlistForm").addEventListener("submit", async 
 });
 </script>
 
+
+
+
 </body>
 </html>
+
