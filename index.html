@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +42,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawZa - Find friends for your dog</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
@@ -142,7 +140,7 @@
     </div>
 </section>
 
-<section class="section" id="android-waitlist">
+<section class="section platform-section android-only desktop-only" id="android-waitlist">
     <div class="container" style="text-align: center;">
         <h2>Android user?</h2>
         <p>
@@ -174,53 +172,57 @@
 </footer>
 
 <script>
-document.getElementById("androidWaitlistForm").addEventListener("submit", async function (event) {
-    event.preventDefault();
+const androidWaitlistForm = document.getElementById("androidWaitlistForm");
 
-    const message = document.getElementById("waitlistMessage");
-    const name = document.getElementById("waitlistName").value.trim();
-    const email = document.getElementById("waitlistEmail").value.trim();
+if (androidWaitlistForm) {
+    androidWaitlistForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-    message.textContent = "Submitting...";
+        const message = document.getElementById("waitlistMessage");
+        const name = document.getElementById("waitlistName").value.trim();
+        const email = document.getElementById("waitlistEmail").value.trim();
 
-    const params = new URLSearchParams(window.location.search);
+        message.textContent = "Submitting...";
 
-    try {
-        const response = await fetch("https://europe-west1-freddie-57977.cloudfunctions.net/submitAndroidWaitlist", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: name || null,
-                email: email,
-                source: params.get("utm_source"),
-                medium: params.get("utm_medium"),
-                campaign: params.get("utm_campaign"),
-                page: window.location.href
-            })
-        });
+        const params = new URLSearchParams(window.location.search);
 
-        const result = await response.json();
-
-        if (response.ok) {
-            message.textContent = result.message || "Thanks — we’ll let you know when PawZa for Android is ready.";
-            document.getElementById("androidWaitlistForm").reset();
-
-            if (typeof gtag === "function") {
-                gtag("event", "android_waitlist_signup", {
+        try {
+            const response = await fetch("https://europe-west1-freddie-57977.cloudfunctions.net/submitAndroidWaitlist", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: name || null,
+                    email: email,
                     source: params.get("utm_source"),
                     medium: params.get("utm_medium"),
-                    campaign: params.get("utm_campaign")
-                });
+                    campaign: params.get("utm_campaign"),
+                    page: window.location.href
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                message.textContent = result.message || "Thanks — we’ll let you know when PawZa for Android is ready.";
+                androidWaitlistForm.reset();
+
+                if (typeof gtag === "function") {
+                    gtag("event", "android_waitlist_signup", {
+                        source: params.get("utm_source"),
+                        medium: params.get("utm_medium"),
+                        campaign: params.get("utm_campaign")
+                    });
+                }
+            } else {
+                message.textContent = result.message || "Something went wrong. Please try again.";
             }
-        } else {
-            message.textContent = result.message || "Something went wrong. Please try again.";
+        } catch (error) {
+            message.textContent = "Something went wrong. Please try again.";
         }
-    } catch (error) {
-        message.textContent = "Something went wrong. Please try again.";
-    }
-});
+    });
+}
 </script>
 
 </body>
