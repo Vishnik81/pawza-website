@@ -291,7 +291,7 @@ footer {
     margin-top: 12px;
     padding: 14px 24px;
     border-radius: 12px;
-    background: #021A44;
+    background: var(--orange);
     color: white;
     text-decoration: none;
     font-weight: 700;
@@ -301,6 +301,28 @@ footer {
     margin-top: 18px;
     font-size: 0.95rem;
     opacity: 0.8;
+}
+
+.launch-badge {
+    display: inline-block;
+    margin: 18px 0 4px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.hero-download-button {
+    background: var(--orange);
+    color: var(--white);
+    margin-top: 18px;
+}
+
+.hero-download-button:hover,
+.app-store-button:hover {
+    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
